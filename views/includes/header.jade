@@ -1,0 +1,44 @@
+doctype html5
+head
+	title Deck Chest
+	link(rel='shortcut icon', href='images/logo/logo.png', type='image/png')
+	link(rel='stylesheet', href='stylesheets/main.css')
+	link(rel='stylesheet', href='stylesheets/cardimage.css')
+	link(rel='stylesheet', href='stylesheets/mtgdecks.css')
+	script(src='http://code.jquery.com/jquery-1.11.0.min.js')
+	script(src='javascripts/main.js')
+	script(src='javascripts/mtgdecks.js')
+body
+	header.header
+		section.topBar.fixed
+			a.btn-ac(href='/login') Login
+			a.btn-ac(href='/signup') Sign Up
+		section.topWide
+			.top.compact
+				.logoTopDiv
+					a(href='/'): img.logoTop(src='images/logo/logo.png')
+		section.menuWide
+			.menu.compact
+				ul.menuList
+					li#dd.wrapper-dropdown(tabindex='1')
+						span MTG
+							img.iscroll.tb(src='images/tex/imtg.png', width='19', height='19')
+						ul.dropdown
+							li: a(href='/mtgdecks') Decks
+							li: a(href='/mtgcards') Cards
+							li: a(href='/mtgcollections') Collections
+					li#dd.wrapper-dropdown(tabindex='1')
+						span Pokemon
+							img.iscroll.tb(src='images/tex/pokeball.jpg', width='19', height='19')
+						ul.dropdown
+							li: a(href='/pkmgame') Game
+							li: a(href='/pkmdecks') Decks
+							li: a(href='/pkmcards') Cards
+							li: a(href='/pkmcollections') Collections
+					li#dd.wrapper-dropdown(tabindex='1')
+						span Yugioh
+							img.iscroll.tb(src='images/tex/yugioh.jpg', width='19', height='19')
+						ul.dropdown
+							li: a(href='/ugodecks') Decks
+							li: a(href='/ugocards') Cards
+							li: a(href='/ugocollections') Collections

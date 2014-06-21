@@ -1,0 +1,44 @@
+include ../../includes/header
+
+link(rel='stylesheet', href='stylesheets/sidebar.css')
+script(src='javascripts/main.js')
+
+main.content.compact
+    h1 MTG Decks
+    
+    nav#sidebar
+        h1 Search
+        form(action='/mtgdecks')
+            tbody#searchBar
+                tr
+                    td: p Name
+                    td: input(type='search', id='name', placeholder='Name', onkeyup='keyPressed()')
+                tr
+                    td: p Text
+                    td: input(type='search', id='text', placeholder='Text', onkeyup='keyPressed()')
+                tr
+                    td: p Format
+                    td: input(type='search', id='format', placeholder='Format', onkeyup='keyPressed()')
+                tr
+                    td: p Set
+                    td: select(type='search', id='set', placeholder='Set', onkeyup='keyPressed()')
+                    //td: input(type='search', id='set', placeholder='Set', onkeyup='keyPressed()')
+                tr
+                    td: p CMC
+                    td: input(type='number', id='cmc', placeholder='CMC', onkeyup='keyPressed()')
+                tr
+                    td: p Power
+                    td: input(type='number', id='power', placeholder='Power', onkeyup='keyPressed()')
+                tr
+                    td: p Toughness
+                    td: input(type='number', id='tough', placeholder='Toughness', onkeyup='keyPressed()') 
+    
+    #cardSelector
+        p#cardData
+        
+    textarea.deckList(name='deck', rows='15', cols='30')
+    button(onclick='createImgDisplay()')
+
+    #cardImg
+
+include ../../includes/footer

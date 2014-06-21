@@ -1,0 +1,31 @@
+doctype html5
+html
+	head
+		title Node Authenication
+		link(rel="stylesheet", href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css")
+		link(rel="stylesheet", href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css")
+	body
+		.container
+		.page-header.text-center
+			h1
+				span.fa.fa-anchor
+				| Profile Page
+			a.btn.btn-default.btn-sm(href='/logout') Logout
+		.row
+			//Local Information
+			.col-sm-6
+				.well
+					h3
+						span.fa.fa-user
+						| Local
+						p
+							strong id
+							| : #{user._id}
+							br
+						p
+							strong email
+							| : #{user.local.email}
+							br
+						p
+							strong password
+							| : #{user.local.password}
