@@ -2,7 +2,7 @@ module.exports = function(app, passport) {
 
 	// HOME PAGE ===========================
 	app.get('/', function(req, res) {
-		res.render('pages/index.jade'); 
+		res.render('pages/index.jade', { user: req.user, message: req.flash('loginMessage') }); 
 	});
 
 	// LOGIN ===============================
@@ -44,7 +44,7 @@ module.exports = function(app, passport) {
 
 	// MTGDECKS ============================
 	app.get('/mtgdecks', function(req, res) {
-		res.render('pages/mtg/mtgdecks.jade');
+		res.render('pages/mtg/mtgdecks.jade', { user: req.user, message: req.flash('loginMessage') });
 	});
 };
 

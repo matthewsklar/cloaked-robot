@@ -11,8 +11,24 @@ head
 body
 	header.header
 		section.topBar.fixed
-			a.btn-ac(href='/login') Login
-			a.btn-ac(href='/signup') Sign Up
+			-if (user)
+				a.btn.btn-default.btn-sm(href='/logout') Logout
+			-else
+				.col-sm-6.col-sm-offset-3.center
+					form(action="/login", method="post")
+						.form-group
+							label.logintext Email
+							input.form-control(type='text', name='email')
+							label.logintext Password
+							input.form-control(type='text', name='password')
+							button.btn.btn-warning.btn-lg(type='submit') Login
+					h1
+						span.alert.alert-danger
+						Login
+					-if (message.length > 0)
+						.alert.alert-danger #{message}
+			//a.btn-ac(href='/login') Login
+			//a.btn-ac(href='/signup') Sign Up
 		section.topWide
 			.top.compact
 				.logoTopDiv
